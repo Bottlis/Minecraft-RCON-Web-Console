@@ -1,6 +1,6 @@
 $( document ).ready(function() {
 	
-	var lastCommand = "";
+  var lastCommand = "";
 	
 	$("#txtCommand").bind("enterKey",function(e){
 		lastCommand = $("#txtCommand").val();
@@ -76,8 +76,8 @@ function logDenger(log)
 function alertSuccess(messenge)
 {
  $( "#alertMessenge" ).fadeOut( "slow", function() {
-  $("#alertMessenge").attr('class', 'alert alert-success');
-  $("#alertMessenge").html(messenge);  
+  $("#alertMessenge").attr('class', 'alert alert-success text-center');
+  $("#alertMessenge").html(messenge);
   $( "#alertMessenge" ).fadeIn( "slow", function() {
 
   });
@@ -87,7 +87,7 @@ function alertSuccess(messenge)
 function alertInfo(messenge)
 {
  $( "#alertMessenge" ).fadeOut( "slow", function() {
-  $("#alertMessenge").attr('class', 'alert alert-info');
+  $("#alertMessenge").attr('class', 'alert alert-info text-center');
   $("#alertMessenge").html(messenge);  
   $( "#alertMessenge" ).fadeIn( "slow", function() {
 
@@ -98,7 +98,7 @@ function alertInfo(messenge)
 function alertWarning(messenge)
 {
  $( "#alertMessenge" ).fadeOut( "slow", function() {
-  $("#alertMessenge").attr('class', 'alert alert-warning');
+  $("#alertMessenge").attr('class', 'alert alert-warning text-center');
   $("#alertMessenge").html(messenge);  
   $( "#alertMessenge" ).fadeIn( "slow", function() {
 
@@ -109,7 +109,7 @@ function alertWarning(messenge)
 function alertDenger(messenge)
 {
  $( "#alertMessenge" ).fadeOut( "slow", function() {
-  $("#alertMessenge").attr('class', 'alert alert-danger');
+  $("#alertMessenge").attr('class', 'alert alert-danger text-center');
   $("#alertMessenge").html(messenge);  
   $( "#alertMessenge" ).fadeIn( "slow", function() {
   });

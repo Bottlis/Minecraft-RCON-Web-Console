@@ -24,15 +24,17 @@ This file is part of Minecraft-RCON-Console.
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>Minecraft RCON Console</title>
 
-	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
 
 	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<!-- Latest darkly bootstrap theme CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/darkly/bootstrap.min.css" integrity="sha384-w+8Gqjk9Cuo6XH9HKHG5t5I1VR4YBNdPt/29vwgfZR485eoEJZ8rJRbm3TR32P6k" crossorigin="anonymous">
+
 	<!-- Latest compiled and minified JavaScript -->
-	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 	<script type="text/javascript" src="../script.js"></script>
 
 	<meta http-equiv="refresh" content="30">
@@ -40,8 +42,8 @@ This file is part of Minecraft-RCON-Console.
 </head>
 
 
-<body>
-	<div class="container-fluid">
+<body class="bg-white" style="overflow-y: hidden">
+	<div class="container-fluid p-0">
 		<div class="list-group-item list-group-item-info">
 
 			<?php
@@ -82,7 +84,6 @@ This file is part of Minecraft-RCON-Console.
 			$division = $json->numplayers / $json->maxplayers;
 			$percent = $division * 100;
 			echo format("Online : {0} / {1} ({2}%){3}", $json->numplayers, $json->maxplayers, $percent, "<p>");
-
 			$progressClass = "progress-bar";
 			if($percent > 80) $progressClass = "progress-bar progress-bar-danger";
 
@@ -125,8 +126,8 @@ This file is part of Minecraft-RCON-Console.
 			}
 
 			?>
-		</div>
+	</div>
 
-	</body>
+</body>
 
-	</html>
+</html>

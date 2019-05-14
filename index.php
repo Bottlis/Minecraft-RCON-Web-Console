@@ -27,38 +27,37 @@ require 'config.php';
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>Minecraft RCON Console</title>
 
-	<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
+	<!--<script src="//code.jquery.com/jquery-migrate-3.0.1.min.js"></script> -->
 
 	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+	<!-- Latest darkly bootstrap theme CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/darkly/bootstrap.min.css" integrity="sha384-w+8Gqjk9Cuo6XH9HKHG5t5I1VR4YBNdPt/29vwgfZR485eoEJZ8rJRbm3TR32P6k" crossorigin="anonymous">
 
 	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 	<script type="text/JavaScript" src="script.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
 </head>
 
 
 <body>
 	<!-- Stack the columns on mobile by making one full-width and the other half-width -->
 	<div class="container-fluid content" style="padding-top: 15px;">
-		<div class="alert alert-info" id="alertMessenge">Welcome to Minecraft RCON Console.</div>
-		<div class="alert alert-info"><center><?php echo $serverName; ?></center></div>
+		<div class="alert alert-info text-center" id="alertMessenge">Welcome to Minecraft RCON Console.</div>
+		<div class="alert alert-info text-center"><?php echo $serverName; ?></div>
 		<div class="row">
 			<div class="col-md-8 col-lg-8 console">
-				<div class="panel panel-primary" >
-					<div class="panel-heading">
-						<h3 class="panel-title">Console</h3>
+				<div class="card mb-3">
+					<div class="card-header bg-info">
+						<h3>Console</h3>
 					</div>
-					<div class="panel-body">
+					<div class="card-body bg-white">
 						<ul class="list-group" id="groupConsole">
 							<li class="list-group-item list-group-item-info">Welcome to Minecraft RCON Console.</li>
 							<li class="list-group-item list-group-item-info">View all command at <a href="http://minecraft.gamepedia.com/Commands" target="_blank">http://minecraft.gamepedia.com/Commands</a></li>
@@ -68,36 +67,37 @@ require 'config.php';
 					</div>
 				</div>
 
-				<div class="checkbox panel panel-default panel-body">
-					<label style="padding-top: 1%;">
-						<input type="checkbox" id="chkAutoScroll" checked="true" > Auto scroll
-					</label>
-					<button type="button" class="btn btn-primary" tabindex="0" id="btnClearLog" style="float:right;"><span class="glyphicon glyphicon-remove-sign"></span> Clear Console</button>
+				<div class="checkbox card card-body bg-white mb-3">
+					<div class="row align-items-center">
+						<div class="col-6">
+							<label class="text-dark btn mb-0">
+								<input type="checkbox" id="chkAutoScroll" checked="true"> Auto scroll
+							</label>
+						</div>
+						<div class="col-6">
+							<button type="button" class="btn btn-primary" tabindex="0" id="btnClearLog" style="float:right;"><span class="glyphicon glyphicon-remove-sign"></span> Clear Console</button>
+						</div>
+					</div>
 				</div>
 
 				<div class="input-group">
 					<input type="text" class="form-control" id="txtCommand">
-					<div class="input-group-btn">
+					<div class="input-group-append">
 						<button type="button" class="btn btn-primary" tabindex="-1" id="btnSend"><span class="glyphicon glyphicon-arrow-right"></span> Send</button>
 					</div>
 				</div>
 			</div>
 
-
-
 			<div class="col-md-4 col-lg-4 status">
-				<div class="panel panel-primary">
-					<div class="panel-heading">
-						<h3 class="panel-title">Server Status & Info</h3>
+				<div class="card mb-3 h-100">
+					<div class="card-header bg-info">
+						<h3>Server Status & Info</h3>
 					</div>
-					<div class="panel-body">
-						<iframe src="query/status.php" width="100%" height="378px" frameBorder="0">Browser not compatible.</iframe>
+					<div class="card-body bg-white">
+						<iframe src="query/status.php" width="100%" frameBorder="0" class="h-100">Browser not compatible.</iframe>
 					</div>
-
-				</div>
-				<div class="panel panel-default">
-					<div class="panel-body">
-						Minecraft RCON Console 1.1 | Develop by ekaomk
+					<div class="card-footer bg-info">
+						<p class="mb-0">Minecraft RCON Console 2.2 | Created by ekaomk. Maintained by Megastary.</p>
 					</div>
 				</div>
 
@@ -105,8 +105,6 @@ require 'config.php';
 
 		</div>
 	</div>
-
-
 
 </body>
 
